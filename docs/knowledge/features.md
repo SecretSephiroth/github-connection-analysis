@@ -2,6 +2,18 @@
 
 # What was built
 
+## Story 16: Add pixel-style shader, lighting and ground shadows
+
+- Merged: 2026-11-12
+- Branch: `feature/16-add-pixel-style-shader-lighting-ground`
+- Merge request: https://github.com/SecretSephiroth/github-connection-analysis/pull/2
+- Files changed: 12 (mostly `project/NOTES.md`, `project/index.html`, `project/src/config.js`, `project/src/entities.js`, `project/src/main.js` and 7 more)
+- Acceptance criteria:
+  - When the ball is in the air then a shadow stays on the court directly under it
+  - When the ball rises then its shadow stays on the ground and the gap between ball and shadow grows
+  - When each player is on court then each has a ground shadow
+  - When the shader is switched off then the game still plays and the court markings stay readable
+
 ## Story 11: Show an isometric court in a pixel-art view
 
 - Merged: 2026-11-12
