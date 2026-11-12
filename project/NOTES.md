@@ -13,3 +13,8 @@
 - Light: from the upper left (`LIGHT_DIRECTION`). Three diagonal bands, factors 1.12 / 1.0 / 0.88 (`LIGHT_FACTORS`). Only court, surround and players are lit; lines, net and ball never change.
 - Shader: `src/shader.js` snaps each pixel to the palette, then applies the light band. It runs on the 320x180 picture, so the look is the same at any window size. Switch: button or `S` key (`SHADER_DEFAULT_ON`).
 - Shadows: `src/shadow.js`. A shadow is always at the object's ground position (z = 0); only height makes the gap (z x TILE pixels). Demo ball/players are in `src/entities.js`; up/down arrows move the ball.
+
+## Physics (ball flight, bounce, net, lines)
+- Units: metres and seconds. x across the court, y along it, net at y = 0, z up. Court and net sizes are in `src/court.js` (net 0.914 m centre, 1.07 m posts).
+- Settings, all named in `src/physics-config.js`: `GRAVITY` 9.81, `FIXED_STEP` 1/120 s, `BOUNCE_LOSS` 0.7, `GROUND_FRICTION` 0.85, `BALL_RADIUS` 0.033, `REST_SPEED` 0.5, `MAX_STEPS_PER_FRAME` 10, `LINE_HALF_WIDTH` 0.025.
+- The ball (`src/ball.js`) only moves in `FIXED_STEP` steps; `src/sim.js` turns frame time into whole steps. Result is `in`, `out` or `net` (`src/rules.js`); a ball touching a line counts as in. Singles court by default.
