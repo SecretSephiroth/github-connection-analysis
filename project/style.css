@@ -44,3 +44,34 @@ canvas:focus-visible {
   outline: 3px solid var(--accent-dark);
   outline-offset: 3px;
 }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+button {
+  font: inherit;
+  padding: 6px 14px;
+  border: 2px solid var(--accent-dark);
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button[aria-pressed="false"] {
+  background: #fff;
+  color: var(--accent-dark);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+.hint { margin: 0; font-size: 0.9rem; }
